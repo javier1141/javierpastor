@@ -9,7 +9,8 @@ import {CancionesServicesService} from '../servicios/canciones-services.service'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
-import {SliderFormattingExampleComponent} from './body/slider-formatting-example/slider-formatting-example.component'
+import {SliderFormattingExampleComponent} from './body/slider-formatting-example/slider-formatting-example.component';
+import { ArtistasComponent } from './artistas/artistas.component'
 
 
 
@@ -19,7 +20,8 @@ import {SliderFormattingExampleComponent} from './body/slider-formatting-example
     AppComponent,
     IndiceComponent,
     BodyComponent,
-    SliderFormattingExampleComponent
+    SliderFormattingExampleComponent,
+    ArtistasComponent
   ],
   imports: [
     BrowserModule,

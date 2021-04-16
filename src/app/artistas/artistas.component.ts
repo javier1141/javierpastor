@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
-import { Artista } from 'src/Models/Artista';
 import { Cancion } from 'src/Models/Cancion';
-import {CancionesServicesService} from '../../servicios/canciones-services.service';
-
-
+import { CancionesServicesService } from 'src/servicios/canciones-services.service';
 
 @Component({
-  selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.scss']
+  selector: 'app-artistas',
+  templateUrl: './artistas.component.html',
+  styleUrls: ['./artistas.component.scss']
 })
-export class BodyComponent implements OnInit {
+export class ArtistasComponent implements OnInit {
 
   Data: Cancion[] = [];
   public auxcancion:Cancion=new Cancion();
@@ -19,7 +16,7 @@ export class BodyComponent implements OnInit {
   public playAudio: boolean=false;
   public silent: boolean=false;
   public numero:number;
-  strmusic:string="";
+  strmusic:string="adele";
   value= 100;
 
   constructor(private cancionesservicios:CancionesServicesService) {
@@ -36,8 +33,8 @@ export class BodyComponent implements OnInit {
     this.getCanciones(this.strmusic);
   }
 
-  getCanciones(nombre_cancion:string){
-    this.cancionesservicios.getTruck(nombre_cancion).subscribe((data)=>this.Pintar(data));
+  getCanciones(nombre_artista:string){
+    this.cancionesservicios.getTruckartista(nombre_artista).subscribe((data)=>this.Pintar(data));
   }
 
   Pintar(datos: any): void {
@@ -177,6 +174,3 @@ export class BodyComponent implements OnInit {
   }
 
 }
-
-
-
