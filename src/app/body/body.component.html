@@ -1,0 +1,93 @@
+<div id="layout_body">
+
+  <div id="layout_buscar">
+    <input type="text"  placeholder=" Buscar "
+        [value]="music" (change)="changeFn($event)"
+    />
+  </div>
+
+
+  <div id="video-Detalle">
+      <div id="Vector">
+          <img id="adela" src="assets/adele.png"/>
+      </div>
+      <div id="div_descripcion" [style.backgroundImage]="'url(assets/adelefondo.png)'">
+          <p id="txt_titulo">Adele 21</p>
+          <p id="txt_titulo_descripcion">Lo mejor de Adele</p>
+          <p id="txt_seguidores">321, 123 seguidores</p>
+          <p id="txt_descripcion">Adele Laurie Blue Adkins (Tottenham, Londres, Inglaterra, 5 de mayo de 1988), conocida simplemente como Adele, es una cantante, compositora y multinstrumentista británica.8​</p>
+
+          <div id=layout_botones_y_adornos>
+            <button id="boton_generico">
+              <span id="texto">
+                Reproducir
+              </span>
+            </button>
+
+            <button id="boton_seguir">
+              <span id="texto_seguir">
+                Seguir
+              </span>
+           </button>
+
+            <div id="icons-elipse">
+              <i id="elipse_1"></i>
+              <i id="elipse_2"></i>
+              <i id="elipse_3"></i>
+            </div>
+          </div>
+      </div>
+
+  </div>
+
+  <p id="lbl_resultados">Resultados</p>
+
+
+   <div *ngIf="Data" id="layout_card">
+      <div   *ngFor="let resp of Data" id="layout_datos" >
+        <img id="imagen_card" src={{resp.picture_small}} alt="Card image cap" (click)="evento_imagen(resp)">
+        <p id="txt_nombre_cancion">
+            {{resp.nombre | uppercase }}
+        </p>
+        <p id="txt_artista">
+             {{resp.artista}}
+        </p>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+<div id="reproductor">
+    <img id="img_cancion" src={{imagen_album}}/>
+    <div id="rect_rojo">
+
+      <div class="container">
+        <button id="atras" (click)="atras()">
+          <img  [style.backgroundImage]="'url(assets/atras.png)'" [style.width.px]="60" [style.height.px]="60"/>
+        </button>
+        <button id="ctrlCancionAtras" class="btnAudio" (click)="playPause(numero)">
+          <img *ngIf="playAudio" [style.backgroundImage]="'url(assets/pause.png)'" [style.width.px]="60" [style.height.px]="60"
+          />
+          <img *ngIf="!playAudio" [style.backgroundImage]="'url(assets/play.png)'" [style.width.px]="60" [style.height.px]="60"
+          />
+        </button>
+        <button id="adelante" (click)="adelante()">
+          <img [style.backgroundImage]="'url(assets/adelante.png)'" [style.width.px]="60" [style.height.px]="60"/>
+        </button>
+        <mat-slider [(ngModel)]="value" (input)="onInputChange($event)" min=0 max=100></mat-slider>
+        <button id="silenc" (click)="silenc()">
+          <img [style.backgroundImage]="'url(assets/silencio.png)'" [style.width.px]="60" [style.height.px]="60"/>
+        </button>
+        <!--select class="btnAudio" id="desplegable" [(ngModel)]="music">
+          <option [value]=null>Selecciona el beat</option>
+          <option *ngFor="let music of Data" [ngValue]="music.track">{{music.nombre}}</option>
+        </select-->
+      </div>
+
+    </div>
+  </div>
+
+

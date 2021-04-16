@@ -1,0 +1,59 @@
+@media screen and (min-width:320px){
+  #layout_body{
+    display: flex;
+    flex-direction: row;
+  }
+  app-indice{
+    width: 20%;
+  }
+
+  app-body{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width:480px){
+  #layout_body{
+    display: flex;
+    flex-direction: row;
+  }
+  app-indice{
+    width: 20%;
+  }
+
+  app-body{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width:768px){
+  #layout_body{
+    display: flex;
+    flex-direction: row;
+  }
+  app-indice{
+    width: 20%;
+  }
+
+  app-body{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width:1024px){
+  #layout_body{
+    display: flex;
+    flex-direction: row;
+
+  }
+  app-indice{
+    flex-grow: 4;
+  }
+
+  app-body{
+    flex-grow: 8;
+  }
+
+}
+
+
